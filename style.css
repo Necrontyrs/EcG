@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100&family=Dancing+Script:wght@500&display=swap');
+
+body {
+    margin: 0;
+    background-color: #ff9249;
+    font-family: 'Advent Pro', sans-serif;
+}
+
+
+header {
+    height: 100px;
+    width: 100%;
+}
+
+a {
+    font-size: 48px;
+}
+
+li {
+    list-style-type: none;
+}
+
+h2 {
+    text-align: center;
+    margin: auto;
+    font-size: 72px;
+}
+
+h3 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 48px;
+}
+
+
+
+#Cuisine {
+    background: url(Cuisine.jpg);
+}
+
+#Salle {
+    background: url(Salle.jpg);
+}
+
+#Jardins {
+    background: url(Vue.jpg);
+}
+
+#Livraisons {
+    background: url(Livraisons.jpg);
+}
+
+#Boulette {
+    background: url(PateBoulette.jpg);
+}
+
+#Poulet {
+    background: url(PouletRiz.jpg);
+}
+
+#Vege {
+    background: url(SaladeVégé.jpg);
+}
+
+#lacarte li {
+    margin: 65px 100px 0 100px;
+    height: 226px;
+    width: 55%;
+    max-width: 550px;
+    float: left;
+    box-shadow: 6px 6px 28px -1px rgba(0,0,0,0.75);
+}
+
+#lacarte p {
+    height: 45px;
+    width: 235px;
+    background-color: #fcff46;
+    float: right;
+    margin: 50px -180px 0 0;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 15px;
+    box-shadow: 4px 4px 0 1px rgb(225, 236, 65); 
+}
+
+#rencontre li {
+    margin: 65px 100px 0 100px;
+    height: 226px;
+    width: 55%;
+    max-width: 550px;
+    float: left;
+    box-shadow: 6px 6px 28px -1px rgba(0,0,0,0.75);
+}
+
+#rencontre p {
+    height: 45px;
+    width: 235px;
+    background-color: #fcff46;
+    float: right;
+    margin: 50px -180px 0 0;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 15px;
+    box-shadow: 4px 4px 0 1px rgb(225, 236, 65); 
+}
+
+#rencontre #Salle, #rencontre #Cuisine {
+    float: right;
+}
+
+#Salle p, #Cuisine p {
+    float: left;
+    background-color: rgb(255, 167, 35);
+    margin-left: -180px;
+    box-shadow: -4px 4px 0 1px rgb(255, 206, 46);
+}
+
+#navbar {
+    overflow: hidden;
+    background-color: #ffd500;
+    position: fixed;
+    width: 100%;
+    opacity: 0.9;
+}
+
+#navbar {
+    height: 100px;
+    width: 100%;
+}
+
+#navbar li {
+    float: left;
+    font-size: 1.2em;
+    height: 100px;
+}
+
+#navbar li a {
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    padding: 18px 16px;
+}
+
+#carousel {
+    grid-row: 1 / 2;
+    grid-column: 1 / 8;
+    width: auto;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 600px;
+    --items: 3;
+    --middle: 2;
+    --position: 1;
+    pointer-events: none;
+    padding-top: 100px;
+}
+
+
+  
+div.item {
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    background-color: coral;
+    --r: calc(var(--position) - var(--offset));
+    --abs: max(calc(var(--r) * -1), var(--r));
+    transition: all 0.25s linear;
+    transform: rotateY(calc(-10deg * var(--r)))
+      translateX(calc(-300px * var(--r)));
+    z-index: calc((var(--position) - var(--abs)));
+}
+
+img {
+      width: 300px;
+      height: 400px;
+}
+  
+div.item:nth-of-type(1) {
+    --offset: 1;
+}
+
+div.item:nth-of-type(2) {
+    --offset: 2;
+}
+
+div.item:nth-of-type(3) {
+    --offset: 3;
+}
+  
+input:nth-of-type(1) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+input:nth-of-type(1):checked ~ main#carousel {
+    --position: 1;
+}
+  
+input:nth-of-type(2) {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+
+input:nth-of-type(2):checked ~ main#carousel {
+    --position: 2;
+}
+  
+input:nth-of-type(3) {
+    grid-column: 4 /5;
+    grid-row: 2 / 3;
+}
+
+input:nth-of-type(3):checked ~ main#carousel {
+    --position: 3;
+}
+  
